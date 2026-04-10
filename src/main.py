@@ -2,7 +2,7 @@ from textnode import TextNode
 
 
 def main():
-    textnode = TextNode('This is some anchor text', 'link', 'https://www.boot.dev')
+    textnode = TextNode('This is some anchor text', 'link')
     print(textnode)
 
 
