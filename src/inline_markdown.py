@@ -109,3 +109,13 @@ def split_nodes_link(old_nodes):
                 text_index += 1
             new_nodes.append(new_text_node)
     return new_nodes
+
+
+def text_to_textnodes(text):
+    text_node = TextNode(text, TextType.TEXT)
+    bold_nodes = split_nodes_delimiter([text_node], '**', TextType.BOLD)
+    italic_nodes = split_nodes_delimiter(bold_nodes, '_', TextType.ITALIC)
+    code_nodes = split_nodes_delimiter(italic_nodes, '`', TextType.CODE)
+    image_nodes = split_nodes_image(code_nodes)
+    link_nodes = split_nodes_link(image_nodes)
+    return link_nodes
