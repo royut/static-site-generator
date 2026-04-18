@@ -1,5 +1,5 @@
 from textnode import TextNode
-from copystatic import copy_files_recursive
+from copystatic import copy_files
 
 
 def main():
@@ -7,7 +7,7 @@ def main():
     print(textnode)
     source = 'static'
     destination = 'public'
-    copy_files_recursive(source, destination)
+    copy_files(source, destination)
 
 
 if __name__ == '__main__':
