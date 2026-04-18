@@ -1,13 +1,13 @@
 from textnode import TextNode
 from copystatic import copy_files
+from gencontent import generate_page
 
 
 def main():
-    textnode = TextNode('This is some anchor text', 'link', 'https://www.boot.dev')
-    print(textnode)
     source = 'static'
     destination = 'public'
     copy_files(source, destination)
+    generate_page('content/index.md', 'template.html', 'public/index.html')
 
 
 if __name__ == '__main__':
