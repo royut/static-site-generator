@@ -3,7 +3,8 @@ import shutil
 
 
 def copy_files(source, destination):
-    shutil.rmtree(destination)
+    if not os.path.exists(source):
+        shutil.rmtree(destination)
     copy_files_recursive(source, destination)
     return
 
